@@ -23,9 +23,9 @@
     "safesearch": {
       "title": "Filtre des contenus pour adultes",
       "oneOf": [
-        { "const": 0, "title": "Aucun" },
-        { "const": 1, "title": "Modéré" },
-        { "const": 2, "title": "Strict" }
+        { "const": "aucun", "title": "Aucun" },
+        { "const": "modere", "title": "Modéré" },
+        { "const": "strict", "title": "Strict" }
       ]
     },
     "results": {

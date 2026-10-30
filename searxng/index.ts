@@ -8,7 +8,7 @@ import dataSchema from './data.schema.json' with { type: 'json' };
 type SearxngConfig = {
   baseUrl: string;
   language: string;
-  safesearch: 0 | 1 | 2;
+  safesearch: keyof typeof safesearchLevels;
   results: number;
 };
 
@@ -76,6 +76,8 @@ const searchTimeoutMs = 10_000;
 /** Précisions à la voix, traduites vers les paramètres de SearXNG. */
 const periods = { jour: 'day', semaine: 'week', mois: 'month', annee: 'year' } as const;
 const categories = { general: 'general', actualites: 'news' } as const;
+/** Les listes déroulantes de l'administration envoient du texte : niveau traduit ici. */
+const safesearchLevels = { aucun: '0', modere: '1', strict: '2' } as const;
 
 const text = (value: unknown, max: number): string | null => {
   if (typeof value !== 'string') return null;
@@ -145,7 +147,7 @@ const addon: AddonDefinition<SearxngConfig, SearxngData> = {
   configDefaults: {
     baseUrl: 'http://127.0.0.1:8080',
     language: 'fr',
-    safesearch: 1,
+    safesearch: 'modere',
     results: 5,
   },
   dataVersion: 1,
@@ -197,7 +199,7 @@ const addon: AddonDefinition<SearxngConfig, SearxngData> = {
       q: query,
       format: 'json',
       language,
-      safesearch: String(safesearch),
+      safesearch: safesearchLevels[safesearch],
       categories: categories[category ?? 'general'],
     });
     if (period) params.set('time_range', periods[period]);

@@ -25,9 +25,15 @@ test('définition, réglages et vérification de l’instance (Tester)', async (
       baseUrl,
     );
   assert.equal(
-    f.runtime.validateConfig(addon.id, { ...addon.configDefaults, safesearch: 3 }).ok,
+    f.runtime.validateConfig(addon.id, { ...addon.configDefaults, safesearch: 1 }).ok,
     false,
   );
+  // Le formulaire de l'administration envoie le choix d'une liste déroulante en texte.
+  for (const safesearch of ['aucun', 'modere', 'strict'])
+    assert.equal(
+      f.runtime.validateConfig(addon.id, { ...addon.configDefaults, safesearch }).ok,
+      true,
+    );
   const result = await f.read();
   assert.deepEqual(f.contract(result), []);
   assert.equal(result.ok && result.card.primaryValue, '5 résultats');
@@ -36,7 +42,7 @@ test('définition, réglages et vérification de l’instance (Tester)', async (
 });
 
 test('une question part à SearXNG et revient en carte, sans doublon ni adresse douteuse', async (t) => {
-  const f = setup(t, { baseUrl: 'https://searx.maison.lan/searxng/', safesearch: 0 });
+  const f = setup(t, { baseUrl: 'https://searx.maison.lan/searxng/', safesearch: 'aucun' });
   const invoked = await f.invoke('ask', { query: '  date de sortie Dune deuxième partie  ' });
   const { outcome, tool } = invoked;
   assert.equal(outcome.ok, true);
