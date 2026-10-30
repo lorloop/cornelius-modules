@@ -1,0 +1,10 @@
+{
+  "query": "12 * 7",
+  "number_of_results": 0,
+  "results": [],
+  "answers": ["84"],
+  "corrections": [],
+  "infoboxes": [],
+  "suggestions": [],
+  "unresponsive_engines": []
+}

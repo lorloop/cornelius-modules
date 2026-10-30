@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "SearxngData v1",
+  "type": "object",
+  "oneOf": [
+    {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind", "query", "answers", "infobox", "results"],
+      "properties": {
+        "kind": { "const": "results" },
+        "query": { "type": "string", "minLength": 1, "maxLength": 500 },
+        "answers": {
+          "type": "array",
+          "maxItems": 3,
+          "items": { "type": "string", "minLength": 1, "maxLength": 300 }
+        },
+        "infobox": {
+          "oneOf": [
+            { "type": "null" },
+            {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["title", "text", "url"],
+              "properties": {
+                "title": { "type": "string", "minLength": 1, "maxLength": 120 },
+                "text": { "type": "string", "minLength": 1, "maxLength": 600 },
+                "url": { "type": ["string", "null"], "maxLength": 500, "pattern": "^https?://" }
+              }
+            }
+          ]
+        },
+        "results": {
+          "type": "array",
+          "maxItems": 5,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["title", "url", "site", "snippet", "publishedAt"],
+            "properties": {
+              "title": { "type": "string", "minLength": 1, "maxLength": 200 },
+              "url": { "type": "string", "maxLength": 500, "pattern": "^https?://" },
+              "site": { "type": "string", "minLength": 1, "maxLength": 120 },
+              "snippet": { "type": ["string", "null"], "minLength": 1, "maxLength": 400 },
+              "publishedAt": { "type": ["string", "null"], "pattern": "^\\d{4}-\\d{2}-\\d{2}$" }
+            }
+          }
+        }
+      }
+    },
+    {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind", "results", "engines"],
+      "properties": {
+        "kind": { "const": "status" },
+        "results": { "type": "integer", "minimum": 0 },
+        "engines": { "type": "integer", "minimum": 0 }
+      }
+    }
+  ]
+}

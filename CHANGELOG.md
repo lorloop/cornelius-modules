@@ -4,6 +4,12 @@ Cette page retrace les modules ajoutés et modifiés, du plus récent au plus an
 
 ## Non publié
 
+### 2026-10-30 : Recherche web
+
+**Ajouté**
+
+- **Recherche web** (1.0.0) : une recherche sur le web par une instance SearXNG auto-hébergée, sans jeton. Réponse directe et premiers résultats sur la carte, extraits transmis à Cornelius ; période (`periode`) et articles de presse (`categorie`) précisés à la voix. Auteur : lorloop.
+
 ### 2026-10-29 : licence MIT
 
 **Modifié**

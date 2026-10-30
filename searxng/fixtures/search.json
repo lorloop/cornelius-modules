@@ -1,0 +1,94 @@
+{
+  "query": "date de sortie Dune deuxième partie",
+  "number_of_results": 0,
+  "results": [
+    {
+      "url": "https://fr.wikipedia.org/wiki/Dune,_deuxi%C3%A8me_partie",
+      "title": "Dune, deuxième partie — Wikipédia",
+      "content": "Dune, deuxième partie (<b>Dune: Part Two</b>) est un film de science-fiction américain réalisé par Denis Villeneuve, sorti en 2024. Il fait suite à Dune, sorti en 2021.",
+      "publishedDate": null,
+      "thumbnail": "",
+      "engine": "wikipedia",
+      "template": "default.html",
+      "parsed_url": ["https", "fr.wikipedia.org", "/wiki/Dune,_deuxi%C3%A8me_partie", "", "", ""],
+      "img_src": "",
+      "priority": "",
+      "engines": ["wikipedia", "duckduckgo"],
+      "positions": [1, 1],
+      "score": 4.0,
+      "category": "general"
+    },
+    {
+      "url": "https://www.allocine.fr/film/fichefilm_gen_cfilm=290382.html",
+      "title": "Dune : Deuxième Partie - film 2024 - AlloCiné",
+      "content": "Dune : Deuxième Partie est un film réalisé par Denis Villeneuve avec Timothée Chalamet, Zendaya. Synopsis : Paul Atréides s’unit à Chani et aux Fremen…",
+      "publishedDate": "2024-02-28T00:00:00",
+      "thumbnail": "",
+      "engine": "duckduckgo",
+      "template": "default.html",
+      "parsed_url": [
+        "https",
+        "www.allocine.fr",
+        "/film/fichefilm_gen_cfilm=290382.html",
+        "",
+        "",
+        ""
+      ],
+      "img_src": "",
+      "priority": "",
+      "engines": ["duckduckgo", "brave"],
+      "positions": [2, 1],
+      "score": 2.5,
+      "category": "general"
+    },
+    {
+      "url": "https://fr.wikipedia.org/wiki/Dune,_deuxi%C3%A8me_partie",
+      "title": "Dune, deuxième partie — Wikipédia (doublon)",
+      "content": "Doublon renvoyé par un autre moteur.",
+      "publishedDate": null,
+      "engine": "brave",
+      "category": "general"
+    },
+    {
+      "url": "javascript:alert(1)",
+      "title": "Adresse refusée",
+      "content": "",
+      "engine": "brave",
+      "category": "general"
+    },
+    {
+      "url": "https://www.premiere.fr/Cinema/News-Cinema/Dune-2-date-de-sortie",
+      "title": "Dune 2 : la date de sortie avancée au 28 février 2024",
+      "content": "Warner Bros. avance la sortie française de Dune : Deuxième partie au &quot;28 février 2024&quot;.",
+      "publishedDate": "2023-12-14T10:30:00",
+      "engine": "brave",
+      "category": "general"
+    }
+  ],
+  "answers": [
+    {
+      "url": null,
+      "template": "answer/legacy.html",
+      "engine": "duckduckgo",
+      "parsed_url": null,
+      "answer": "Dune, deuxième partie est sorti en France le 28 février 2024."
+    }
+  ],
+  "corrections": [],
+  "infoboxes": [
+    {
+      "infobox": "Dune, deuxième partie",
+      "id": "https://fr.wikipedia.org/wiki/Dune,_deuxi%C3%A8me_partie",
+      "content": "Film américain réalisé par Denis Villeneuve, sorti en 2024.",
+      "img_src": null,
+      "urls": [
+        { "title": "Wikipédia", "url": "https://fr.wikipedia.org/wiki/Dune,_deuxi%C3%A8me_partie" }
+      ],
+      "attributes": [],
+      "engine": "wikipedia",
+      "engines": ["wikipedia"]
+    }
+  ],
+  "suggestions": ["dune 3 date de sortie"],
+  "unresponsive_engines": [["google", "timeout"]]
+}
